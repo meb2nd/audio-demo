@@ -16,6 +16,9 @@ class AudioRecordingTableViewCell: UITableViewCell {
 
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var audioRecordingTitleLabel: UILabel!
+    var fileName: String?
+    
+    var delegate: AudioRecordingCellDelegate?
     
     
     override func awakeFromNib() {
@@ -30,5 +33,11 @@ class AudioRecordingTableViewCell: UITableViewCell {
     }
 
     @IBAction func playTapped(_ sender: Any) {
+        
+        guard let fileName = fileName else {
+            return
+        }
+        
+        delegate?.didTapPlay(forAudioRecordingFile: fileName, cell: self)
     }
 }

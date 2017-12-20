@@ -117,7 +117,9 @@ class ViewController: UIViewController {
         if recorder.isRecording {
             recorder.stop()
             recordAudioButton.setTitle("Record Audio", for: .normal)
-            tape?.exportAsynchronously(name: "test", baseDir: .documents, exportFormat: .mp4, callback: callback)
+            let fileName = "Audio_Recording_\(Recordings.getSavedRecordings().count + 1)"
+            tape?.exportAsynchronously(name: fileName, baseDir: .documents, exportFormat: .mp4, callback: callback)
+            
         } else {
             
             do {
@@ -131,6 +133,7 @@ class ViewController: UIViewController {
     
     // Keyboard Functions
     func noteOn(note: PianoKey) {
+        
         // start from the correct note if amplitude is zero
         if oscillator.amplitude == 0 {
             oscillator.rampTime = 0
@@ -158,12 +161,20 @@ class ViewController: UIViewController {
             print("Exported File Duration: \(converted.duration) seconds")
             
             performUIUpdatesOnMain {
+                
                 // Replace the file being played
                 try? self.player.replace(file: converted)
                 let newTitle = "Audio Recording \(Recordings.getSavedRecordings().count + 1)"
                 let newRecording = Recording(title: newTitle, fileName: converted.fileNamePlusExtension)
                 Recordings.addToSavedRecordings(recording: newRecording)
                 self.audioRecordingsTableView.reloadData()
+                
+                // Clear the recorder
+                do {
+                    try self.recorder.reset()
+                } catch {
+                    AKLog("Couldn't reset.")
+                }
             }
             
             
@@ -188,6 +199,8 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AudioRecordingTableViewCell", for: indexPath) as! AudioRecordingTableViewCell
         
         cell.audioRecordingTitleLabel.text = Recordings.getSavedRecordings()[indexPath.row].title
+        cell.fileName = Recordings.getSavedRecordings()[indexPath.row].fileName
+        cell.delegate = self
         
         return cell
     }
@@ -215,7 +228,7 @@ extension ViewController: AudioRecordingCellDelegate {
     fileprivate func play(_ fileName: String, _ cell: AudioRecordingTableViewCell) {
         
         do {
-            let akAudioFile = try AKAudioFile(readFileName: fileName)
+            let akAudioFile = try AKAudioFile(readFileName: fileName, baseDir: .documents)
             try player.replace(file: akAudioFile)
             startPlayer(cell)
         } catch let error as NSError {
@@ -227,7 +240,7 @@ extension ViewController: AudioRecordingCellDelegate {
         
         var activePlaybackCell: AudioRecordingTableViewCell?
         
-        // If playback cell active confirm whether it's visible
+        // If playback cell active, confirm whether it's still visible
         if let indexPath = activePlaybackIndexPath,
             let cell = self.audioRecordingsTableView.cellForRow(at: indexPath)
             as? AudioRecordingTableViewCell {
@@ -249,9 +262,14 @@ extension ViewController: AudioRecordingCellDelegate {
         } else if let activePlaybackCell = activePlaybackCell,
             player.isPlaying {
             stopPlayer(activePlaybackCell)
+            
+            repeat {
+                //statements
+            } while player.isPlaying
+            
             play(fileName, cell)
         } else {
-            
+            if player.isPlaying {player.stop()}
             play(fileName, cell)
         }
 
