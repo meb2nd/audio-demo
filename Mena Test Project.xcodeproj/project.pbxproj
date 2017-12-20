@@ -42,7 +42,7 @@
 		103A5BF51FE6093A002AE5DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		103A5BF71FE6093A002AE5DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		103A5BFA1FE6093A002AE5DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		103A5BFC1FE6093A002AE5DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		103A5BFC1FE6093A002AE5DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/mebarnes/Documents/Nanodegree/Modacity - Coding Challenge/Mena Test Project/Mena Test Project/Assets.xcassets"; sourceTree = "<absolute>"; };
 		103A5BFF1FE6093A002AE5DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		103A5C011FE6093A002AE5DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12E62BD31FE9C8580092612E /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 				12E62BE31FEB1BBF0092612E /* Views */,
 				103A5BFE1FE6093A002AE5DE /* LaunchScreen.storyboard */,
 				103A5BF91FE6093A002AE5DE /* Main.storyboard */,
-				12E62BE51FEB1BEF0092612E /* Supporting Files */,
+				12E62BE91FEB30490092612E /* Supporting Files */,
 			);
 			path = "Mena Test Project";
 			sourceTree = "<group>";
@@ -124,13 +124,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		12E62BE51FEB1BEF0092612E /* Supporting Files */ = {
+		12E62BE91FEB30490092612E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				103A5BFC1FE6093A002AE5DE /* Assets.xcassets */,
 				103A5C011FE6093A002AE5DE /* Info.plist */,
 			);
-			path = "Supporting Files";
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
