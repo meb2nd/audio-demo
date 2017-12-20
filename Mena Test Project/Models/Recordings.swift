@@ -8,10 +8,11 @@
 
 import UIKit
 
+// MARK: - Recordings
 class Recordings: NSObject {
 
     
-    // Conveneince method to save a recording
+    // Convenience method to save a recording
     static func addToSavedRecordings(recording: Recording) {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -24,7 +25,7 @@ class Recordings: NSObject {
         return (UIApplication.shared.delegate as! AppDelegate).recordings
     }
     
-    // Conveneince method to remove recording from saved collection
+    // Convenience method to remove recording from saved collection
     static func removeAtIndex(_ index: Int) {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -36,7 +37,7 @@ class Recordings: NSObject {
         
     }
     
-    // Conveneince method to retrieve recording from saved collection
+    // Convenience method to retrieve recording from saved collection
     static func getRecordingAtIndex(_ index: Int) -> Recording? {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

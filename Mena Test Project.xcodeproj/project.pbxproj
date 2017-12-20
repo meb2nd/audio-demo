@@ -88,17 +88,49 @@
 			isa = PBXGroup;
 			children = (
 				103A5BF51FE6093A002AE5DE /* AppDelegate.swift */,
-				103A5BF71FE6093A002AE5DE /* ViewController.swift */,
 				12E62BE01FEAFF720092612E /* GCDBlackBox.swift */,
-				12E62BDC1FEAE11E0092612E /* Recording.swift */,
-				12E62BDD1FEAE11F0092612E /* Recordings.swift */,
-				103A5BF91FE6093A002AE5DE /* Main.storyboard */,
-				12E62BDA1FEAB0350092612E /* AudioRecordingTableViewCell.swift */,
-				103A5BFC1FE6093A002AE5DE /* Assets.xcassets */,
+				12E62BE41FEB1BD60092612E /* Models */,
+				12E62BE21FEB1BA50092612E /* Controllers */,
+				12E62BE31FEB1BBF0092612E /* Views */,
 				103A5BFE1FE6093A002AE5DE /* LaunchScreen.storyboard */,
-				103A5C011FE6093A002AE5DE /* Info.plist */,
+				103A5BF91FE6093A002AE5DE /* Main.storyboard */,
+				12E62BE51FEB1BEF0092612E /* Supporting Files */,
 			);
 			path = "Mena Test Project";
+			sourceTree = "<group>";
+		};
+		12E62BE21FEB1BA50092612E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				103A5BF71FE6093A002AE5DE /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		12E62BE31FEB1BBF0092612E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				12E62BDA1FEAB0350092612E /* AudioRecordingTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		12E62BE41FEB1BD60092612E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				12E62BDC1FEAE11E0092612E /* Recording.swift */,
+				12E62BDD1FEAE11F0092612E /* Recordings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		12E62BE51FEB1BEF0092612E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				103A5BFC1FE6093A002AE5DE /* Assets.xcassets */,
+				103A5C011FE6093A002AE5DE /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

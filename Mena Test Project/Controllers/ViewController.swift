@@ -25,7 +25,11 @@ enum PianoKey: Int {
     case C5
 }
 
+// MARK: - ViewController
+
 class ViewController: UIViewController {
+    
+    // MARK: - Outlets
     
     @IBOutlet weak var cButton: UIButton!
     @IBOutlet weak var cSharpButton: UIButton!
@@ -42,6 +46,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var highCButton: UIButton!
     @IBOutlet weak var recordAudioButton: UIButton!
     @IBOutlet weak var audioRecordingsTableView: UITableView!
+    
+    // MARK: - Properties
     
     var oscillator = AKOscillator(waveform: AKTable(.sawtooth))
     var currentAmplitude = 0.1
@@ -65,6 +71,8 @@ class ViewController: UIViewController {
                  PianoKey.AS4: 466.164,
                  PianoKey.B4: 493.883,
                  PianoKey.C5: 523.251]
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +112,8 @@ class ViewController: UIViewController {
     }
 
 
+    // MARK: - Actions
+    
     @IBAction func keyTouchUp(_ sender: Any) {
         noteOff()
     }
@@ -130,6 +140,8 @@ class ViewController: UIViewController {
             recordAudioButton.setTitle("Done", for: .normal)
         }
     }
+    
+    // MARK: - Helper Functions
     
     // Keyboard Functions
     func noteOn(note: PianoKey) {
@@ -185,9 +197,13 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - ViewController: UITableViewDelegate
+
 extension ViewController: UITableViewDelegate {
     
 }
+
+// MARK: - ViewController: UITableViewDataSource
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -206,6 +222,8 @@ extension ViewController: UITableViewDataSource {
     }
     
 }
+
+// MARK: - ViewController: AudioRecordingCellDelegate
 
 extension ViewController: AudioRecordingCellDelegate {
     
