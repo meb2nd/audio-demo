@@ -16,6 +16,10 @@
 		12E62BD61FE9C85E0092612E /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12E62BD31FE9C8580092612E /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		12E62BD71FE9C85E0092612E /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E62BD41FE9C85E0092612E /* AudioKitUI.framework */; };
 		12E62BD81FE9C85E0092612E /* AudioKitUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12E62BD41FE9C85E0092612E /* AudioKitUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		12E62BDB1FEAB0350092612E /* AudioRecordingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E62BDA1FEAB0350092612E /* AudioRecordingTableViewCell.swift */; };
+		12E62BDE1FEAE11F0092612E /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E62BDC1FEAE11E0092612E /* Recording.swift */; };
+		12E62BDF1FEAE11F0092612E /* Recordings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E62BDD1FEAE11F0092612E /* Recordings.swift */; };
+		12E62BE11FEAFF720092612E /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E62BE01FEAFF720092612E /* GCDBlackBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +47,10 @@
 		103A5C011FE6093A002AE5DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12E62BD31FE9C8580092612E /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 		12E62BD41FE9C85E0092612E /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKitUI.framework; sourceTree = "<group>"; };
+		12E62BDA1FEAB0350092612E /* AudioRecordingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingTableViewCell.swift; sourceTree = "<group>"; };
+		12E62BDC1FEAE11E0092612E /* Recording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
+		12E62BDD1FEAE11F0092612E /* Recordings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recordings.swift; sourceTree = "<group>"; };
+		12E62BE01FEAFF720092612E /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +89,11 @@
 			children = (
 				103A5BF51FE6093A002AE5DE /* AppDelegate.swift */,
 				103A5BF71FE6093A002AE5DE /* ViewController.swift */,
+				12E62BE01FEAFF720092612E /* GCDBlackBox.swift */,
+				12E62BDC1FEAE11E0092612E /* Recording.swift */,
+				12E62BDD1FEAE11F0092612E /* Recordings.swift */,
 				103A5BF91FE6093A002AE5DE /* Main.storyboard */,
+				12E62BDA1FEAB0350092612E /* AudioRecordingTableViewCell.swift */,
 				103A5BFC1FE6093A002AE5DE /* Assets.xcassets */,
 				103A5BFE1FE6093A002AE5DE /* LaunchScreen.storyboard */,
 				103A5C011FE6093A002AE5DE /* Info.plist */,
@@ -162,8 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12E62BDB1FEAB0350092612E /* AudioRecordingTableViewCell.swift in Sources */,
 				103A5BF81FE6093A002AE5DE /* ViewController.swift in Sources */,
 				103A5BF61FE6093A002AE5DE /* AppDelegate.swift in Sources */,
+				12E62BDE1FEAE11F0092612E /* Recording.swift in Sources */,
+				12E62BE11FEAFF720092612E /* GCDBlackBox.swift in Sources */,
+				12E62BDF1FEAE11F0092612E /* Recordings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

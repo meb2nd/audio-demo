@@ -36,13 +36,16 @@
                                 <state key="normal" title="Record Audio">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="toggleRecorder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oLz-Hx-w7j"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gOa-dM-a8Y">
                                 <rect key="frame" x="16" y="273" width="343" height="383"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Fda-UT-T8B">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AudioRecordingTableViewCell" id="Fda-UT-T8B" customClass="AudioRecordingTableViewCell" customModule="Mena_Test_Project" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fda-UT-T8B" id="HIj-UV-uf3">
@@ -63,9 +66,16 @@
                                                     <state key="normal" title="Play">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="playTapped:" destination="Fda-UT-T8B" eventType="touchUpInside" id="gQk-gm-673"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="audioRecordingTitleLabel" destination="CeS-7S-IDM" id="om5-aC-Tch"/>
+                                            <outlet property="playButton" destination="vud-BQ-655" id="Qup-da-yvT"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -227,6 +237,7 @@
                     <connections>
                         <outlet property="aButton" destination="aMW-t6-v5G" id="Sce-EI-6f5"/>
                         <outlet property="aSharpButton" destination="LPo-QS-f2b" id="5at-3B-oqH"/>
+                        <outlet property="audioRecordingsTableView" destination="gOa-dM-a8Y" id="PJt-c5-Zvo"/>
                         <outlet property="bButton" destination="dqb-xN-qLz" id="euB-97-29F"/>
                         <outlet property="cButton" destination="WCB-5o-AMm" id="xKv-gh-Y2M"/>
                         <outlet property="cSharpButton" destination="em0-JB-Zsl" id="1PQ-4w-rof"/>
@@ -238,6 +249,7 @@
                         <outlet property="gButton" destination="bi8-4q-syE" id="Z75-op-MkM"/>
                         <outlet property="gSharpButton" destination="qvg-KS-EJ2" id="QuL-4v-85D"/>
                         <outlet property="highCButton" destination="Pd8-os-sZq" id="Ce5-hs-6wX"/>
+                        <outlet property="recordAudioButton" destination="g0R-cW-qfl" id="qS5-Ak-ly1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
