@@ -174,14 +174,12 @@ class ViewController: UIViewController {
             
             performUIUpdatesOnMain {
                 
-                // Replace the file being played
-                try? self.player.replace(file: converted)
                 let newTitle = "Audio Recording \(Recordings.getSavedRecordings().count + 1)"
                 let newRecording = Recording(title: newTitle, fileName: converted.fileNamePlusExtension)
                 Recordings.addToSavedRecordings(recording: newRecording)
                 self.audioRecordingsTableView.reloadData()
                 
-                // Clear the recorder
+                // Reset the recorder to prevent appending recordings
                 do {
                     try self.recorder.reset()
                 } catch {
