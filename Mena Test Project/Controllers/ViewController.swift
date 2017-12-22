@@ -46,6 +46,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var highCButton: UIButton!
     @IBOutlet weak var recordAudioButton: UIButton!
     @IBOutlet weak var audioRecordingsTableView: UITableView!
+    @IBOutlet weak var recordingLabel: UILabel!
     
     // MARK: - Properties
     
@@ -129,6 +130,7 @@ class ViewController: UIViewController {
             recordAudioButton.setTitle("Record Audio", for: .normal)
             let fileName = "Audio_Recording_\(Recordings.getSavedRecordings().count + 1)"
             tape?.exportAsynchronously(name: fileName, baseDir: .documents, exportFormat: .mp4, callback: callback)
+            recordingLabel.text = "Audio recording is complete!"
             
         } else {
             
@@ -138,6 +140,7 @@ class ViewController: UIViewController {
                 AKLog("Couldn't record")
             }
             recordAudioButton.setTitle("Done", for: .normal)
+            recordingLabel.text = "Recording..."
         }
     }
     
