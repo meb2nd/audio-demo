@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     
     // MARK: - Properties
     
-    var oscillator = AKOscillator(waveform: AKTable(.sawtooth))
+    var oscillator = AKOscillator()
     var currentAmplitude = 0.1
     var currentRampTime = 0.2
     var recorder: AKNodeRecorder!
@@ -104,6 +104,8 @@ class ViewController: UIViewController {
         } catch let error as NSError {
             print("There's an error: \(error)")
         }
+        
+        oscillator.amplitude = 0
         
     }
 
